@@ -154,7 +154,7 @@
 
     <!-- SLIDE 2: ÍNDICE -->
     <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
-        <h2 class="mb-8" style="color: #38bdf8;">ÍNDICE</h2>
+        <h2 class="mb-8" style="color: #38bdf8;">Agenda</h2>
         <ul class="text-lg fill-height" style="color: #cbd5e1;">
             <li>Por qué una empresa petrolera</li>
             <li>Situación actual vs transformación</li>
@@ -427,6 +427,84 @@
         <h2 class="text-4xl mb-8" style="color: #38bdf8;">¿Preguntas?</h2>
         <p class="text-xl" style="color: #cbd5e1;">Gracias por vuestra atención</p>
     </section>
+
+    <div id="controls" style="position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 100;">
+        <button onclick="prevSlide()" style="padding: 10px 15px; border-radius: 5px; border: none; background: #334155; color: white; cursor: pointer;">❮</button>
+        <button onclick="nextSlide()" style="padding: 10px 15px; border-radius: 5px; border: none; background: #38bdf8; color: #0f172a; cursor: pointer; font-weight: bold;">❯</button>
+    </div>
+
+    <div id="progress-bar" style="position: fixed; bottom: 0; left: 0; height: 4px; background: #38bdf8; transition: width 0.3s; z-index: 100;"></div>
+
+    <style>
+        /* Ajustes necesarios para el funcionamiento de las slides */
+        body {
+            background-color: #020617;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Evita el scroll manual */
+        }
+
+        .slide {
+            display: none; /* Ocultamos todas por defecto */
+            position: absolute;
+            animation: fadeIn 0.5s ease-in-out;
+            margin: 0; /* Quitamos el margen inferior que tenías */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .slide.active {
+            display: flex; /* Solo mostramos la activa */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress-bar');
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            // Actualizar barra de progreso
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlides();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlides();
+            }
+        }
+
+        // Controles de teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Inicializar la primera diapositiva
+        updateSlides();
+    </script>
 
 </body>
 </html>
