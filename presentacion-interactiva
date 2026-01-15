@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitalización en Empresa Petrolera - Evil Corp.</title>
+    <style>
+        :root {
+            --font-family-display: Arial, sans-serif;
+            --font-weight-display: 600;
+            --font-family-content: Arial, sans-serif;
+            --font-weight-content: 400;
+            --font-size-content: 16px;
+            --line-height-content: 1.4;
+        }
+
+        body.theme-dark {
+            --color-bg-base: #0f172a;
+            --color-bg-elevated: #020617;
+            --color-bg-surface: #1e293b;
+            --color-bg-muted: #334155;
+            --color-text-primary: #f1f5f9;
+            --color-text-secondary: #cbd5e1;
+            --color-text-muted: #94a3b8;
+            --color-text-accent: #38bdf8;
+            --color-primary: #38bdf8;
+            --color-primary-foreground: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-content);
+            font-weight: var(--font-weight-content);
+            font-size: var(--font-size-content);
+            line-height: var(--line-height-content);
+            overflow-x: hidden;
+        }
+
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .row { flex-direction: row; }
+        .col { flex-direction: column; }
+        .center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .space-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .fill-width { flex: 1; }
+        .fill-height { flex: 1; display: flex; flex-direction: column; }
+
+        .gap-sm { gap: 0.5rem; }
+        .gap-md { gap: 1rem; }
+        .gap-lg { gap: 1.5rem; }
+        .gap-xl { gap: 2rem; }
+
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .p-12 { padding: 3rem; }
+        .p-16 { padding: 4rem; }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-display);
+            font-weight: var(--font-weight-display);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+
+        .text-6xl { font-size: 3.75rem; }
+        .text-5xl { font-size: 3rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-base { font-size: 1rem; }
+        .text-sm { font-size: 0.875rem; }
+
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+
+        ul, ol {
+            margin-left: 2rem;
+            line-height: 1.8;
+        }
+
+        li { 
+            list-style: disc;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-rect {
+            padding: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="theme-dark">
+
+    <!-- SLIDE 1: PORTADA -->
+    <section class="slide p-16 col center" style="background-color: #020617; color: #f1f5f9;">
+        <h1 class="text-6xl mb-4" style="color: #38bdf8;">Digitalización en Empresa Petrolera - Evil Corp.</h1>
+        <p class="text-2xl mb-8" style="color: #cbd5e1;">Transformación de Modelo Lineal a Circular</p>
+        <p class="text-sm" style="color: #94a3b8;">Presentación de Proyecto de DASP</p>
+        <p class="text-sm mt-8" style="color: #94a3b8;">I.E.S Venancio Blanco, Curso 2025/26</p>
+    </section>
+
+    <!-- SLIDE 2: ÍNDICE -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-8" style="color: #38bdf8;">ÍNDICE</h2>
+        <ul class="text-lg fill-height" style="color: #cbd5e1;">
+            <li>Por qué una empresa petrolera</li>
+            <li>Situación actual vs transformación</li>
+            <li>Tecnologías clave</li>
+            <li>Infraestructura cloud híbrida</li>
+            <li>Impacto por áreas</li>
+            <li>Resultados y beneficios</li>
+        </ul>
+    </section>
+
+    <!-- SLIDE 3: POR QUÉ UNA PETROLERA -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">¿Por qué una Empresa Petrolera?</h2>
+        <div class="fill-height">
+            <ul class="text-lg" style="color: #cbd5e1;">
+                <li style="margin-bottom: 1.2rem;"><strong style="color: #38bdf8;">Alto impacto ambiental</strong>: Consumo masivo de recursos y generación de residuos</li>
+                <li style="margin-bottom: 1.2rem;"><strong style="color: #38bdf8;">Volatilidad geopolítica</strong>: Conflictos en Oriente Medio, sanciones a Rusia, tensiones en Ormuz</li>
+                <li style="margin-bottom: 1.2rem;"><strong style="color: #38bdf8;">Presión regulatoria</strong>: Exigencias de sostenibilidad y economía circular</li>
+                <li style="margin-bottom: 1.2rem;"><strong style="color: #38bdf8;">Oportunidad clave</strong>: Digitalización como palanca de supervivencia estratégica</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: SITUACIÓN ACTUAL -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Situación Actual (sin Digitalización)</h2>
+        <div class="fill-height row gap-lg">
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <h3 style="color: #ef4444; margin-bottom: 1rem;">❌ Problemas</h3>
+                <ul class="text-sm" style="color: #cbd5e1;">
+                    <li>Sistemas fragmentados</li>
+                    <li>Procesos manuales</li>
+                    <li>Falta de visibilidad real</li>
+                    <li>Incapacidad de respuesta rápida</li>
+                    <li>Errores frecuentes</li>
+                </ul>
+            </div>
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <h3 style="color: #10b981; margin-bottom: 1rem;">✓ Con Digitalización</h3>
+                <ul class="text-sm" style="color: #cbd5e1;">
+                    <li>Ecosistema integrado</li>
+                    <li>Automatización e IA</li>
+                    <li>Visibilidad en tiempo real</li>
+                    <li>Resiliencia geopolítica</li>
+                    <li>Precisión operativa</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: TECNOLOGÍAS CLAVE -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Tecnologías Habilitadoras</h2>
+        <div class="fill-height row gap-md items-center">
+            <div class="fill-width icon-box">
+                <div class="tech-icon" style="color: #38bdf8;">📡</div>
+                <p class="text-sm text-center" style="color: #cbd5e1;"><strong>IoT</strong></p>
+                <p class="text-xs text-center" style="color: #94a3b8;">Sensores</p>
+            </div>
+            <div class="fill-width icon-box">
+                <div class="tech-icon" style="color: #38bdf8;">🤖</div>
+                <p class="text-sm text-center" style="color: #cbd5e1;"><strong>IA/ML</strong></p>
+                <p class="text-xs text-center" style="color: #94a3b8;">Predicción</p>
+            </div>
+            <div class="fill-width icon-box">
+                <div class="tech-icon" style="color: #38bdf8;">📊</div>
+                <p class="text-sm text-center" style="color: #cbd5e1;"><strong>Big Data</strong></p>
+                <p class="text-xs text-center" style="color: #94a3b8;">Analítica</p>
+            </div>
+            <div class="fill-width icon-box">
+                <div class="tech-icon" style="color: #38bdf8;">🔗</div>
+                <p class="text-sm text-center" style="color: #cbd5e1;"><strong>Blockchain</strong></p>
+                <p class="text-xs text-center" style="color: #94a3b8;">Trazabilidad</p>
+            </div>
+            <div class="fill-width icon-box">
+                <div class="tech-icon" style="color: #38bdf8;">🦾</div>
+                <p class="text-sm text-center" style="color: #cbd5e1;"><strong>Robótica</strong></p>
+                <p class="text-xs text-center" style="color: #94a3b8;">Automatización</p>
+            </div>
+        </div>
+        <p class="text-sm mt-6 text-center" style="color: #cbd5e1;">Trabajando juntas en un ecosistema integrado</p>
+    </section>
+
+    <!-- SLIDE 6: INFRAESTRUCTURA CLOUD -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Infraestructura Cloud Híbrida</h2>
+        <div class="fill-height col gap-lg">
+            <div style="background-color: #1e293b; padding: 1rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <p style="color: #38bdf8; font-weight: 600; margin-bottom: 0.5rem;">☁️ SaaS</p>
+                <p class="text-sm" style="color: #cbd5e1;"><strong>OneDrive</strong> (almacenamiento seguro) + <strong>HubSpot CRM</strong> (gestión de clientes)</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <p style="color: #38bdf8; font-weight: 600; margin-bottom: 0.5rem;">🏗️ PaaS</p>
+                <p class="text-sm" style="color: #cbd5e1;"><strong>IoT Hub</strong> + <strong>Big Data & Analytics</strong> en la nube</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <p style="color: #38bdf8; font-weight: 600; margin-bottom: 0.5rem;">🔒 Seguridad Integrada</p>
+                <p class="text-sm" style="color: #cbd5e1;">Autenticación multifactor • Cifrado de datos • Servidor NAS local de respaldo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 7: INVENTARIO Y CADENA DE SUMINISTRO -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Inventario y Cadena de Suministro</h2>
+        <div class="fill-height col gap-md">
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #ef4444;">
+                <p style="color: #ef4444; font-weight: 600; font-size: 0.9rem;">ANTES</p>
+                <p class="text-sm" style="color: #cbd5e1;">Compras reactivas, desconocimiento de stock real, roturas frecuentes</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #10b981;">
+                <p style="color: #10b981; font-weight: 600; font-size: 0.9rem;">DESPUÉS</p>
+                <p class="text-sm" style="color: #cbd5e1;">IoT monitoriza stock en tiempo real • Big Data predice demanda • Reposición automática</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #38bdf8;">
+                <p style="color: #38bdf8; font-weight: 600; font-size: 0.9rem;">✓ RESULTADO</p>
+                <p class="text-sm" style="color: #cbd5e1;">Menos roturas de stock • Costes reducidos • Respuesta rápida a crisis geopolíticas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 8: EFICIENCIA ENERGÉTICA -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Eficiencia Energética y Sostenibilidad</h2>
+        <div class="fill-height col gap-md">
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #ef4444;">
+                <p style="color: #ef4444; font-weight: 600; font-size: 0.9rem;">ANTES</p>
+                <p class="text-sm" style="color: #cbd5e1;">Equipos sin optimización, consumo descontrolado, ineficiencias desapercibidas</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #10b981;">
+                <p style="color: #10b981; font-weight: 600; font-size: 0.9rem;">DESPUÉS</p>
+                <p class="text-sm" style="color: #cbd5e1;">IoT + IA detectan ineficiencias • Ajuste automático de parámetros • Optimización continua</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #38bdf8;">
+                <p style="color: #38bdf8; font-weight: 600; font-size: 0.9rem;">✓ RESULTADO</p>
+                <p class="text-sm" style="color: #cbd5e1;"><strong style="color: #10b981;">-20% consumo energético</strong> • Modelo circular • Reducción de CO₂</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 9: MANTENIMIENTO PREDICTIVO -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Mantenimiento Predictivo</h2>
+        <div class="fill-height col gap-md">
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #ef4444;">
+                <p style="color: #ef4444; font-weight: 600; font-size: 0.9rem;">ANTES</p>
+                <p class="text-sm" style="color: #cbd5e1;">Averías sorpresas → Paradas no planeadas → Costes elevados</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #10b981;">
+                <p style="color: #10b981; font-weight: 600; font-size: 0.9rem;">DESPUÉS</p>
+                <p class="text-sm" style="color: #cbd5e1;">Machine Learning predice fallos • Análisis de vibraciones y temperatura • Mantenimiento programado</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #38bdf8;">
+                <p style="color: #38bdf8; font-weight: 600; font-size: 0.9rem;">✓ RESULTADO</p>
+                <p class="text-sm" style="color: #cbd5e1;">Predicción <strong style="color: #10b981;">30-50 días antes</strong> • Cero paradas imprevistas • Costes optimizados</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 10: DEMANDA Y GEOPOLÍTICA -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">Respuesta a Volatilidad Geopolítica</h2>
+        <div class="fill-height col gap-md">
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #ef4444;">
+                <p style="color: #ef4444; font-weight: 600; font-size: 0.9rem;">ANTES</p>
+                <p class="text-sm" style="color: #cbd5e1;">Reactividad limitada ante cambios de mercado o conflictos geopolíticos</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #10b981;">
+                <p style="color: #10b981; font-weight: 600; font-size: 0.9rem;">DESPUÉS</p>
+                <p class="text-sm" style="color: #cbd5e1;">Big Data integra: precios, datos macroeconómicos, eventos geopolíticos (sanciones, conflictos). Ajuste en tiempo real</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; border-left: 4px solid #38bdf8;">
+                <p style="color: #38bdf8; font-weight: 600; font-size: 0.9rem;">✓ RESULTADO</p>
+                <p class="text-sm" style="color: #cbd5e1;">Ventaja competitiva • Márgenes protegidos • Resilencia ante crisis</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 11: ATENCIÓN AL CLIENTE -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Atención al Cliente y Posventa</h2>
+        <div class="fill-height row gap-lg items-center">
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <h4 style="color: #38bdf8; margin-bottom: 1rem;">💬 Atención 24/7</h4>
+                <p class="text-sm" style="color: #cbd5e1;">Chatbot IA + Portal cliente con seguimiento real</p>
+            </div>
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <h4 style="color: #38bdf8; margin-bottom: 1rem;">📊 Reportes</h4>
+                <p class="text-sm" style="color: #cbd5e1;">Reportes personalizados de consumo y facturación</p>
+            </div>
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <h4 style="color: #38bdf8; margin-bottom: 1rem;">⚠️ Alertas</h4>
+                <p class="text-sm" style="color: #cbd5e1;">Alertas predictivas de mantenimiento necesario</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 12: TABLA COMPARATIVA -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Resumen de Transformación</h2>
+        <div class="fill-height" style="overflow-y: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: #cbd5e1;">
+                <tr style="background-color: #1e293b;">
+                    <td style="padding: 0.8rem; border: 1px solid #334155; color: #38bdf8; font-weight: 600;">Problema</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155; color: #38bdf8; font-weight: 600;">Tecnología</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155; color: #38bdf8; font-weight: 600;">Mejora</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">Stock desconocido</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">IoT + Big Data</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155; color: #10b981;">Stock real-time</td>
+                </tr>
+                <tr style="background-color: #0f172a;">
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">Averías sorpresas</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">Machine Learning</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155; color: #10b981;">Predictivo 30-50d</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">Respuesta lenta</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">IA + HubSpot</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155; color: #10b981;">Chatbot 24/7</td>
+                </tr>
+                <tr style="background-color: #0f172a;">
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">Alto consumo</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">IoT + IA</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155; color: #10b981;">-20% energía</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">Volatilidad mercado</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155;">Big Data</td>
+                    <td style="padding: 0.8rem; border: 1px solid #334155; color: #10b981;">Reacción rápida</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- SLIDE 13: RIESGOS Y SEGURIDAD -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Riesgos y Seguridad</h2>
+        <ul class="text-lg fill-height" style="color: #cbd5e1;">
+            <li style="margin-bottom: 1.2rem;"><strong style="color: #38bdf8;">🔐 Ciberseguridad:</strong> Autenticación multifactor, cifrado de datos, contraseñas robustas</li>
+            <li style="margin-bottom: 1.2rem;"><strong style="color: #38bdf8;">🌐 Conectividad:</strong> Servidor NAS local como respaldo ante caídas de internet</li>
+            <li style="margin-bottom: 1.2rem;"><strong style="color: #38bdf8;">📋 Privacidad:</strong> Cumplimiento RGPD, restricción de accesos por rol</li>
+            <li style="margin-bottom: 1.2rem;"><strong style="color: #38bdf8;">👥 Cambio Organizacional:</strong> Capacitación del personal y gestión del cambio</li>
+        </ul>
+    </section>
+
+    <!-- SLIDE 14: CONCLUSIÓN Y BENEFICIOS -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Conclusión: Beneficios Finales</h2>
+        <div class="fill-height row gap-md">
+            <div style="background-color: #1e293b; padding: 1.2rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <p style="color: #10b981; font-weight: 600; margin-bottom: 0.5rem;">📊 Operativos</p>
+                <p class="text-sm" style="color: #cbd5e1;">-20% energía • Cero paradas • Logística optimizada</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <p style="color: #10b981; font-weight: 600; margin-bottom: 0.5rem;">💰 Comerciales</p>
+                <p class="text-sm" style="color: #cbd5e1;">Atención 24/7 • Respuesta rápida • Diferenciación sostenible</p>
+            </div>
+            <div style="background-color: #1e293b; padding: 1.2rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+                <p style="color: #10b981; font-weight: 600; margin-bottom: 0.5rem;">🌱 Ambientales</p>
+                <p class="text-sm" style="color: #cbd5e1;">Modelo circular • Reducción CO₂ • Gestión residuos</p>
+            </div>
+        </div>
+        <p class="text-center mt-6" style="color: #38bdf8; font-size: 1.2rem; font-weight: 600;">La transformación digital que la industria petrolera necesita para el siglo XXI</p>
+    </section>
+
+    <!-- SLIDE 15: CIERRE -->
+    <section class="slide p-16 col center" style="background-color: #020617; color: #f1f5f9;">
+        <h2 class="text-4xl mb-8" style="color: #38bdf8;">¿Preguntas?</h2>
+        <p class="text-xl" style="color: #cbd5e1;">Gracias por vuestra atención</p>
+    </section>
+
+</body>
+</html>
