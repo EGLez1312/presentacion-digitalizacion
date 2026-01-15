@@ -154,7 +154,7 @@
 
     <!-- SLIDE 2: ÍNDICE -->
     <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
-        <h2 class="mb-8" style="color: #38bdf8;">Agenda</h2>
+        <h2 class="mb-8" style="color: #38bdf8;">ÍNDICE</h2>
         <ul class="text-lg fill-height" style="color: #cbd5e1;">
             <li>Por qué una empresa petrolera</li>
             <li>Situación actual vs transformación</li>
@@ -448,12 +448,15 @@
         }
 
         .slide {
-            display: none; /* Ocultamos todas por defecto */
+            width: 90vw;      
+            max-width: 960px; 
+            height: 80vh;     
+            max-height: 540px;
+            margin: auto;     
+            display: none; 
             position: absolute;
-            animation: fadeIn 0.5s ease-in-out;
-            margin: 0; /* Quitamos el margen inferior que tenías */
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
+            overflow-y: auto; /* Si el contenido es mucho, permite scroll interno */
+        }    
 
         .slide.active {
             display: flex; /* Solo mostramos la activa */
